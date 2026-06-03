@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# onboard.sh — Script d'onboarding pour nouvelles machines Linux.
+# onboard.sh, Script d'onboarding pour nouvelles machines Linux.
 #
 # Détecte la distribution et le gestionnaire de paquets (apt/dnf/pacman/
 # zypper/yum), installe une liste d'outils de base selon un profil, configure
@@ -57,11 +57,11 @@ SKIP_DOCKER_GROUP=0
 SUDO=""               # déterminé plus bas selon l'UID
 
 # ---------------------------------------------------------------------------
-# usage — affiche l'aide détaillée puis renvoie 0.
+# usage, affiche l'aide détaillée puis renvoie 0.
 # ---------------------------------------------------------------------------
 usage() {
   cat <<'EOF'
-onboard.sh — Onboarding de machines Linux (paquets + configuration de base)
+onboard.sh, Onboarding de machines Linux (paquets + configuration de base)
 
 USAGE :
     onboard.sh [OPTIONS]
@@ -106,7 +106,7 @@ EOF
 }
 
 # ---------------------------------------------------------------------------
-# parse_args — analyse les arguments de la ligne de commande.
+# parse_args, analyse les arguments de la ligne de commande.
 # ---------------------------------------------------------------------------
 parse_args() {
   while [[ "$#" -gt 0 ]]; do
@@ -150,7 +150,7 @@ parse_args() {
 }
 
 # ---------------------------------------------------------------------------
-# load_config — charge packages.conf et résout le profil effectif.
+# load_config, charge packages.conf et résout le profil effectif.
 # Renseigne la variable SELECTED_PACKAGES (tableau) et PROFILE.
 # ---------------------------------------------------------------------------
 SELECTED_PACKAGES=()
@@ -182,7 +182,7 @@ load_config() {
 }
 
 # ---------------------------------------------------------------------------
-# setup_privileges — détermine s'il faut préfixer les commandes par sudo.
+# setup_privileges, détermine s'il faut préfixer les commandes par sudo.
 # - root  : SUDO reste vide.
 # - non-root + sudo dispo : SUDO="sudo".
 # - non-root sans sudo : erreur (sauf en dry-run, où l'on tolère pour l'aperçu).
@@ -208,7 +208,7 @@ setup_privileges() {
 }
 
 # ---------------------------------------------------------------------------
-# configure_git — positionne user.name / user.email en global si fournis.
+# configure_git, positionne user.name / user.email en global si fournis.
 # Idempotent : réécrit simplement les valeurs. Ignoré si Git absent.
 # ---------------------------------------------------------------------------
 configure_git() {
@@ -235,7 +235,7 @@ configure_git() {
 }
 
 # ---------------------------------------------------------------------------
-# configure_docker_group — ajoute l'utilisateur courant au groupe docker afin
+# configure_docker_group, ajoute l'utilisateur courant au groupe docker afin
 # d'utiliser Docker sans sudo. Idempotent (ne réajoute pas si déjà membre).
 # N'est exécuté que si Docker fait partie des paquets sélectionnés.
 # ---------------------------------------------------------------------------
@@ -286,7 +286,7 @@ configure_docker_group() {
 }
 
 # ---------------------------------------------------------------------------
-# print_summary — récapitulatif lisible avant exécution des étapes système.
+# print_summary, récapitulatif lisible avant exécution des étapes système.
 # ---------------------------------------------------------------------------
 print_summary() {
   log_section "Récapitulatif de l'onboarding"
@@ -302,12 +302,12 @@ print_summary() {
 }
 
 # ---------------------------------------------------------------------------
-# main — orchestration globale.
+# main, orchestration globale.
 # ---------------------------------------------------------------------------
 main() {
   parse_args "$@"
 
-  log_section "onboard.sh — démarrage"
+  log_section "onboard.sh, démarrage"
   detect_os
   load_config
   setup_privileges

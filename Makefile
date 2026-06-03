@@ -1,4 +1,4 @@
-# Makefile — raccourcis pour le script d'onboarding Linux.
+# Makefile, raccourcis pour le script d'onboarding Linux.
 #
 # Cibles principales :
 #   make help      Affiche cette aide.

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# lib/detect-os.sh — Détection de la distribution Linux et du gestionnaire de
+# lib/detect-os.sh, Détection de la distribution Linux et du gestionnaire de
 # paquets associé.
 #
 # Ce module est destiné à être sourcé par onboard.sh. Il s'appuie sur
@@ -7,13 +7,13 @@
 #
 # Après appel de detect_os(), les variables globales suivantes sont
 # renseignées :
-#   OS_ID        — identifiant de la distro (ex. ubuntu, debian, fedora,
+#   OS_ID, identifiant de la distro (ex. ubuntu, debian, fedora,
 #                  rhel, centos, arch, opensuse-leap, ...). Issu de
 #                  /etc/os-release (champ ID).
-#   OS_ID_LIKE   — familles parentes déclarées (ex. "debian", "rhel fedora").
-#   OS_NAME      — nom lisible (champ PRETTY_NAME ou NAME).
-#   OS_VERSION   — version (champ VERSION_ID), éventuellement vide.
-#   PKG_MANAGER  — gestionnaire détecté : apt | dnf | yum | pacman | zypper.
+#   OS_ID_LIKE, familles parentes déclarées (ex. "debian", "rhel fedora").
+#   OS_NAME, nom lisible (champ PRETTY_NAME ou NAME).
+#   OS_VERSION, version (champ VERSION_ID), éventuellement vide.
+#   PKG_MANAGER, gestionnaire détecté : apt | dnf | yum | pacman | zypper.
 #
 # Matrice de correspondance distro -> gestionnaire (cf. README) :
 #   apt     : debian, ubuntu, linuxmint, pop, raspbian, kali, elementary
@@ -110,7 +110,7 @@ __detect_pkg_from_binaries() {
   return 1
 }
 
-# detect_os — point d'entrée public.
+# detect_os, point d'entrée public.
 # Renseigne les variables globales et journalise le résultat.
 # Quitte le script (code 3) si la plateforme n'est pas un Linux pris en charge.
 detect_os() {

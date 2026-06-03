@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
-# lib/log.sh — Fonctions de journalisation horodatées et colorées.
+# lib/log.sh, Fonctions de journalisation horodatées et colorées.
 #
 # Ce module est destiné à être sourcé par onboard.sh (et les autres
 # bibliothèques). Il n'a pas vocation à être exécuté directement.
 #
 # Variables d'environnement reconnues :
-#   NO_COLOR   — si définie (valeur quelconque), désactive toute couleur.
-#   LOG_LEVEL  — niveau minimal affiché : DEBUG < INFO < WARN < ERROR.
+#   NO_COLOR, si définie (valeur quelconque), désactive toute couleur.
+#   LOG_LEVEL, niveau minimal affiché : DEBUG < INFO < WARN < ERROR.
 #                Valeur par défaut : INFO.
 #
 # Toutes les fonctions écrivent sur la sortie d'erreur (stderr) afin de ne
@@ -90,26 +90,26 @@ __log() {
     "${color}" "$(__log_timestamp)" "${level}" "${__LOG_C_RESET}" "$*" >&2
 }
 
-# Niveau DEBUG — détails utiles au diagnostic, masqués par défaut.
+# Niveau DEBUG, détails utiles au diagnostic, masqués par défaut.
 log_debug() { __log "DEBUG" "${__LOG_C_DEBUG}" "$@"; }
 
-# Niveau INFO — déroulé normal du script.
+# Niveau INFO, déroulé normal du script.
 log_info()  { __log "INFO"  "${__LOG_C_INFO}"  "$@"; }
 
-# Niveau WARN — situation anormale non bloquante.
+# Niveau WARN, situation anormale non bloquante.
 log_warn()  { __log "WARN"  "${__LOG_C_WARN}"  "$@"; }
 
-# Niveau ERROR — échec ; n'interrompt pas le script par lui-même.
+# Niveau ERROR, échec ; n'interrompt pas le script par lui-même.
 log_error() { __log "ERROR" "${__LOG_C_ERROR}" "$@"; }
 
-# log_die <code> <message...> — journalise une erreur puis quitte le script.
+# log_die <code> <message...>, journalise une erreur puis quitte le script.
 log_die() {
   local code="$1"; shift
   log_error "$@"
   exit "${code}"
 }
 
-# log_section <titre> — affiche un séparateur visuel pour structurer la sortie.
+# log_section <titre>, affiche un séparateur visuel pour structurer la sortie.
 log_section() {
   printf '\n%s==> %s%s\n' "${__LOG_C_BOLD}" "$*" "${__LOG_C_RESET}" >&2
 }

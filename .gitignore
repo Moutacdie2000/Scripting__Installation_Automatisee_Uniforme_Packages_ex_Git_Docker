@@ -1,4 +1,4 @@
-# .gitignore — projet scripting-onboarding (Bash)
+# .gitignore, projet scripting-onboarding (Bash)
 
 # Journaux et sorties générées
 *.log

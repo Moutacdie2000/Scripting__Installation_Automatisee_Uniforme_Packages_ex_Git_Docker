@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# lib/packages.sh — Abstraction au-dessus des gestionnaires de paquets.
+# lib/packages.sh, Abstraction au-dessus des gestionnaires de paquets.
 #
 # Ce module fournit une interface unique (rafraîchir l'index, installer une
 # liste de paquets) quel que soit le gestionnaire détecté par detect-os.sh.
@@ -8,9 +8,9 @@
 # Variables globales attendues : PKG_MANAGER, OS_ID, OS_ID_LIKE.
 #
 # Variables de comportement (positionnées par onboard.sh) :
-#   DRY_RUN          — "1" pour n'afficher les commandes sans les exécuter.
-#   ASSUME_YES       — "1" pour répondre oui automatiquement (mode non interactif).
-#   SUDO             — préfixe de privilèges ("sudo" ou "" si déjà root).
+#   DRY_RUN, "1" pour n'afficher les commandes sans les exécuter.
+#   ASSUME_YES, "1" pour répondre oui automatiquement (mode non interactif).
+#   SUDO, préfixe de privilèges ("sudo" ou "" si déjà root).
 #
 # Remarque : certains paquets portent des noms différents selon les distros
 # (ex. ca-certificates est commun, mais Docker n'est pas un simple paquet).

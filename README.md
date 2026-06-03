@@ -1,4 +1,4 @@
-# scripting-onboarding — Onboarding automatisé de machines Linux
+# scripting-onboarding, Onboarding automatisé de machines Linux
 
 Script Bash d'**onboarding** qui prépare une nouvelle machine Linux en quelques
 secondes : il détecte la distribution et son gestionnaire de paquets, installe
@@ -148,8 +148,8 @@ Bash sourcés depuis `lib/`.
 
 Variables d'environnement utiles :
 
-- `NO_COLOR` — désactive la couleur des journaux si définie ;
-- `LOG_LEVEL` — `DEBUG`, `INFO` (défaut), `WARN` ou `ERROR`.
+- `NO_COLOR`, désactive la couleur des journaux si définie ;
+- `LOG_LEVEL`, `DEBUG`, `INFO` (défaut), `WARN` ou `ERROR`.
 
 ### Exemples concrets
 
@@ -224,7 +224,7 @@ PACKAGES_DEV=(
 - **`set -euo pipefail`** : le script s'arrête à la première erreur, sur
   variable non définie, et propage les échecs dans les pipes.
 - **`--dry-run`** : toutes les commandes système passent par `run_cmd`, qui les
-  affiche au lieu de les exécuter en mode aperçu — idéal pour auditer avant
+  affiche au lieu de les exécuter en mode aperçu, idéal pour auditer avant
   d'agir.
 - **Privilèges** : `sudo` n'est utilisé que lorsque c'est nécessaire ; en root,
   aucun préfixe n'est ajouté. L'ajout au groupe `docker` cible l'utilisateur

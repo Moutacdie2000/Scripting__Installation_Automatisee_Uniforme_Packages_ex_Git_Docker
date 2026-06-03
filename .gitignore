@@ -1,0 +1,27 @@
+# .gitignore — projet scripting-onboarding (Bash)
+
+# Journaux et sorties générées
+*.log
+logs/
+
+# Fichiers temporaires d'éditeurs
+*~
+*.swp
+*.swo
+*.bak
+.*.un~
+
+# Configuration d'IDE
+.idea/
+.vscode/
+*.code-workspace
+
+# Fichiers système macOS / Linux
+.DS_Store
+Thumbs.db
+
+# Surcharges locales éventuelles non versionnées
+packages.local.conf
+*.local.conf
+.env
+.env.local
